@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Receipt Detail{% endblock %}
+{% block content %}
+  <h2>{{ receipt.store_name }} - {{ receipt.date_of_purchase }}</h2>
+  <p><strong>Item List:</strong> {{ receipt.item_list }}</p>
+  <p><strong>Total Amount:</strong> ${{ receipt.total_amount }}</p>
+  <a class="btn btn-warning" href="{% url 'receipt_edit' receipt.pk %}">Update</a>
+  <a class="btn btn-danger" href="{% url 'receipt_delete' receipt.pk %}">Delete  </a> <br><br>
+
+{% endblock %}
